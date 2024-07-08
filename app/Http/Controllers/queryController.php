@@ -42,7 +42,7 @@ class queryController extends Controller
    }
 
 public function getUsers(){
-   $users = DB::table('users')->get();
+   $users = DB::table('users')->orderBy('user_id')->cursorPaginate(5,['*'],'pa');
    return view('home', ['users' => $users]);
 }
 

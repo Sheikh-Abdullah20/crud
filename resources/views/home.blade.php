@@ -79,9 +79,15 @@
                     @endforeach
                   </table>
             </div>
+            <div class="row">
+              <div class="col-md-12">
+                {{$users->links()}}
+              </div>
+            </div>
+
         </div>
-        <div class="row text-center">
-            <div class="col-md-12">
+        <div class="row text-center my-4">
+            <div class="col-md-12 mb-5">
                 <a href="{{route('truncate.users')}}" class="btn btn-danger">Truncate All Users</a>
             </div>
         </div>
