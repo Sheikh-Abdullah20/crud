@@ -73,8 +73,7 @@
                         <td>{{$user->user_created}}</td>
                         <td><a href="{{route('view.user',$user->user_id)}}" class="btn btn-info">View</a></td>
                         <td><a href="{{route('update.page',$user->user_id)}}" class="btn btn-primary">Update</a></td>
-                        <td><a href="{{route('delete.user', $user->user_id)}}" class="btn btn-danger" id="
-                          delete">Delete</a></td>
+                        <td><a href="{{route('delete.user', $user->user_id)}}" class="btn btn-danger delete">Delete</a></td>
                       </tr>
                     </tbody>
                     @endforeach
@@ -89,13 +88,19 @@
        </div>
 </body>
 <script>
-  document.getElementById('delete').addEventListener('click', function(e) {
-    e.preventDefault();
-    var confirmation = confirm('Are you sure you want to delete this user?');
-    if (confirmation) {
-      window.location.href = this.href;
-    }
-  });
+const deleteButton = document.querySelector('.delete').addEventListener('click', function(e){
+e.preventDefault();
+const conformation = confirm('are You Sure?');
+if(conformation){
+  window.location.href = this.href;
+}
+else{
+  console.log('Error');
+}
+})
+
+
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
